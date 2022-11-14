@@ -170,18 +170,18 @@ word_your_guess = ""
 
 
 while True:
-    os.system('clear')
+    os.system('cls')
     if first_stage == False:
         check_stage = False
         if word_your_guess in result:
            print(f"You've already guessed {word_your_guess}")
            check_stage = True
-          
-        for i in range(0, len(select_question)):
-            if select_question[i] == word_your_guess and word_your_guess not in result:
-                result[i] = select_question[i]
-                check_stage = True
-                check_win += 1 
+        else:
+          for i in range(0, len(select_question)):
+              if select_question[i] == word_your_guess:
+                  result[i] = select_question[i]
+                  check_stage = True
+                  check_win += 1 
           
         print("".join(result))
       
